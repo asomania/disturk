@@ -16,18 +16,15 @@ const dummyChannels: Channel[] = [
 
 const Channel: React.FC = () => {
   return (
-    <div className="w-60 bg-gray-700 h-screen ">
-      <div className="flex flex-col justify-between h-full py-20">
-        <div className="flex flex-col items-center ">
-          <div className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-gray-600 transition-colors">
-            🌐
+    <div className="w-60 bg-gray-900 h-screen flex flex-col justify-between">
+      <div className="py-5 px-2">
+        <div className="flex items-center justify-center mb-8">
+          <div className="w-16 h-16  flex items-center justify-center text-white text-3xl font-bold cursor-pointer ">
+            Channel
           </div>
-          <h2 className="text-white text-xl font-bold mb-4">Server name</h2>
-          <h2 className="text-white text-xl font-bold mb-4">Channels</h2>
         </div>
-
-        <div className="pb-80">
-          <h2 className="text-white text-xl font-bold mb-4  bg-gray-600 p-2">
+        <div>
+          <h2 className="text-gray-400 text-xs uppercase mb-2 px-2">
             Text Channels
           </h2>
           {dummyChannels.map(
@@ -35,29 +32,37 @@ const Channel: React.FC = () => {
               channel.type === "text" && (
                 <div
                   key={channel.id}
-                  className="flex items-center text-gray-300 hover:text-white cursor-pointer"
+                  className="flex items-center text-gray-400 px-2 py-1 hover:bg-gray-700 hover:text-white rounded cursor-pointer transition-colors"
                 >
-                  <span className="mr-2">
-                    {channel.type === "text" ? "#" : "🔊"}
-                  </span>
+                  <span className="mr-2 text-lg">#</span>
                   <span>{channel.name}</span>
                 </div>
               )
           )}
-
-          <h2 className="text-white text-xl font-bold mb-4"> Voice Channels</h2>
+        </div>
+        <div className="mt-6">
+          <h2 className="text-gray-400 text-xs uppercase mb-2 px-2">
+            Voice Channels
+          </h2>
           {dummyChannels.map(
             (channel) =>
               channel.type === "voice" && (
                 <div
                   key={channel.id}
-                  className="flex items-center text-gray-300 hover:text-white cursor-pointer"
+                  className="flex items-center text-gray-400 px-2 py-1 hover:bg-gray-700 hover:text-white rounded cursor-pointer transition-colors"
                 >
-                  <span className="mr-2">🔊</span>
+                  <span className="mr-2 text-lg">🔊</span>
                   <span>{channel.name}</span>
                 </div>
               )
           )}
+        </div>
+      </div>
+      <div className="bg-gray-800 p-4 flex items-center">
+        <div className="w-10 h-10 bg-gray-600 rounded-full"></div>
+        <div className="ml-3">
+          <h4 className="text-white text-sm font-semibold">Username</h4>
+          <span className="text-gray-400 text-xs">#1234</span>
         </div>
       </div>
     </div>
