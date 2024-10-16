@@ -16,11 +16,11 @@ const dummyServers: Server[] = [
 
 const LeftSidebar: React.FC = () => {
   return (
-    <div className="w-30 bg-gray-800 h-screen flex flex-col items-center py-4 space-y-4">
+    <div className="w-16  bg-gray-800 h-screen flex flex-col items-center py-4 space-y-4">
       {dummyServers.map((server) => (
         <div
           key={server.id}
-          className="w-20 h-20 bg-gray-700 rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-gray-600 transition-colors"
+          className="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-gray-600 transition-colors"
           title={server.name}
         >
           {server.icon}
